@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Role List</title>
+</head>
+<body>
+<div class="container">
+    <h1>Role List</h1>
+    <a href="/roles/create" class="btn btn-primary">Create New Role</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Role Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="role : ${roles}">
+            <td th:text="${role.role_id}">1</td>
+            <td th:text="${role.role_name}">Admin</td>
+            <td>
+                <a th:href="@{/roles/edit/{id}(id=${role.role_id})}" class="btn btn-warning">Edit</a>
+                <a th:href="@{/roles/delete/{id}(id=${role.role_id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

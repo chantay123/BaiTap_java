@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head th:replace="Fragments/lib.html::lib('Get all')">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:replace="fragments/header :: header"></th:block>
+<div id="chao" th:replace="Fragments/lib.html::Chao">
+
+</div>
+<table class="table">
+    <thead class="thead-light">
+    <td>
+        STT
+    </td>
+    <td>
+        ID
+    </td>
+    <td>
+        Name
+    </td>
+    <td>
+        Email
+    </td>
+    <td>
+        Password
+    </td>
+    <td>
+        Birth
+    </td>
+    <td>
+        Action
+    </td>
+    </thead>
+    <tr th:each="student : ${students}">
+        <td th:text="${studentStat.index+1}"></td>
+        <td th:text="${student.id}"></td>
+        <td th:text="|${student.lastName} ${student.firstName}|"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.password}"></td>
+        <td th:text="${student.dateOfBirth}"></td>
+        <td>
+
+            <a th:href="'/students/view/'+${student.id}">View</a>
+
+
+            <a th:href="'/students/delete/'+${student.id}">Delete</a>
+        </td>
+    </tr>
+</table>
+<button onclick="location.href='/students/new'">Create</button>
+<th:block th:replace="fragments/footer :: footer"></th:block>
+</body>
+</html>

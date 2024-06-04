@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr th:each="classroom : ${classrooms}">
+        <td th:text="${classroom.classID}"></td>
+        <td th:text="${classroom.name}"></td>
+    </tr>
+</table>
+</body>
+</html>

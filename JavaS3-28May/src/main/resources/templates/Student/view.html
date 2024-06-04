@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="Fragments/lib.html::lib('View')">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table >
+        <tr>
+            <td>ID</td>
+            <td><input type="text" readonly="readonly" th:field="*{student.id}"></td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" readonly="readonly" th:field="*{student.firstName}"></td>
+        </tr>
+        <tr>
+            <td>LastName Name</td>
+            <td><input type="text" readonly="readonly" th:field="*{student.lastName}"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" readonly="readonly" th:field="*{student.email}"></td>
+        </tr>
+        <tr>
+            <td>DateOfBirth</td>
+            <td><input type="date" readonly="readonly" th:field="*{student.dateOfBirth}"></td>
+        </tr>
+    </table>
+    <a class="btn" th:href = "'/students/edit/'+${student.id}">Edit</a>
+</body>
+</html>

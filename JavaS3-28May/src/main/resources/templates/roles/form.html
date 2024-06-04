@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Role Form</title>
+</head>
+<body>
+<div class="container">
+    <h1>Role Form</h1>
+    <form th:action="@{/roles/create}" th:object="${role}" method="post">
+        <div class="form-group">
+            <label for="role_name">Role Name</label>
+            <input type="text" class="form-control" id="role_name" th:field="*{role_name}"
+                   placeholder="Enter role name">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
